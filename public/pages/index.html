@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--Header-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Expense Calculator</title>
+    <!-- Bootstrap -->
+    <link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../libs/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="../res/styles/custom.min.css" rel="stylesheet">
+</head>
+<!--Body-->
+<body class="nav-md">    
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box box-element">
+            <div class="view">
+                <h3>Expense Calculator</h3>
+            </div>
+        </div>
+        <div class="box box-element">
+            <div class="view">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active" ><a href="#" id="expensedetails">Expense Details</a></li>
+                            <li><a href="#" id="expensehistory">Expense History</a></li>
+                            <li><a href="#" id="individualexphistory">Individual Expense History</a></li>                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="box box-element">
+            <div class="view">
+                <div id="alertMessage" class="col-md-12 col-sm-12 col-xs-12 alert alert-success hide">
+                </div>
+            </div>
+        </div>
+        <div class="box box-element">
+            <div class="view">
+                <div id="expensedetailscontent" class="jumbotron col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <form class="form-horizontal">
+                            <div class="well col-md-12 col-sm-12 col-xs-12"> <h4>List of Expenses</h4> </div>
+                                <div class="form-group">
+                                    <label for="noofpersons" class="control-label col-sm-3 textalign-left">No of Persons:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control col-sm-3" id="noofpersons" value="5">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roomrent" class="control-label col-sm-3 textalign-left">Room Rent:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-calculate col-sm-3" id="roomrent" value="50">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="internet" class="control-label col-sm-3 textalign-left">Internet:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-calculate" id="internet" value="50">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cooksalary" class="control-label col-sm-3 textalign-left">Cook Salary:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-calculate" id="cooksalary" value="50">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Grocerry" class="control-label col-sm-3 textalign-left">Grocerry:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-calculate" id="grocerry" value="50">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="oppshop" class="control-label col-sm-3 textalign-left">Opp Shop:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-calculate" id="oppshop" value="50">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="commonexpenses" class="control-label col-sm-3 textalign-left">Common Expenses:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-calculate" id="commonexpenses" value="50">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="totalexpenses" class="control-label col-sm-3 textalign-left">Total Expenses:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text"  class="form-control" disabled="disabled" id="totalexpenses">
+                                    </div>
+                                </div>
+                            
+                            <button type="submit" id="submit" class="btn btn-default">Calculate</button>
+                            
+                        </form>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <form class="form-horizontal">
+                            <div class="well col-md-12 col-sm-12 col-xs-12"> <h4>Users</h4> </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <label for="entercommonexpensedetails" class="textalign-left col-md-6 col-sm-6 col-xs-6">Name:</label>
+                                <input type="text" class="col-md-6 col-sm-6 col-xs-6" id="username" />
+                                <label for="entercommonexpensedetails" class="textalign-left col-md-6 col-sm-6 col-xs-6">Common Expense:</label>
+                                <input type="text" class="col-md-6 col-sm-6 col-xs-6" id="commonexpenseamount" />
+                                <button type="submit" id="generateindividualExpenseDetails" class="btn btn-default">Generate Expense</button>
+
+                                <div class="table-responsive ">
+                                    <table class="table table-bordered " id="tblindividualExpense">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Total Share</th>
+                                            <th>Common Expense</th>
+                                            <th>Amount to be given</th>
+                                        </tr>
+                                        <!--<tr id="rowid"><td id="username">Amrish</td><td id="singleexpense">61.00</td><td id="commonexpense">45</td><td id="remainingamount">16.00</td></tr>
+            <tr id="rowid"><td id="username">Pradhap</td><td id="singleexpense">61.00</td><td id="commonexpense">34</td><td id="remainingamount">27.00</td></tr>-->
+                                    </table>
+                                </div>
+                            </div>
+                            <button type="submit" id="inserttodb" class="btn btn-default">Add to DB</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-element">
+            <div class="view">
+                <div class="jumbotron table-responsive hide">
+                    <div id="expensehistorycontent" >                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-element">
+            <div class="view">
+                <div class="jumbotron table-responsive hide">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                            Select Month
+                            <span class="caret"></span>
+                        </button>
+                        <ul id="expenseMonthAndYear" class="dropdown-menu">
+                            <li><a href="#">Septmeber-2017</a></li>
+                            <li><a href="#">October-2017</a></li>
+                            <li><a href="#">November-2017</a></li>
+                            <li><a href="#">December-2017</a></li>
+                            <li><a href="#">January-2018</a></li>
+                        </ul>
+                    </div>
+                    <div id="individualexphistorycontent">
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+               <script src="../libs/jquery/dist/jquery.min.js"></script>
+            <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="../res/js/custom.js"></script>
+            <script src="../res/scripts/index.js"></script>
+</body>
+</html>
+

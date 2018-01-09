@@ -1,0 +1,53 @@
+.hide{
+    display:none;
+}
+
+.show{
+    display:block;
+}
+
+.textalign-left{
+    text-align:left !important;
+}
+.jumbotron {
+    padding: 5em inherit !important;
+}
+
+
+.login_content {
+    background-color: #eee;
+    color: #666;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    border: 1px solid #fff;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    height: 280px;
+}
+
+.separator {
+    border-top: 1px solid #D8D8D8;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.login_content form input[type="text"], .login_content form input[type="email"], .login_content form input[type="password"] {
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;
+    border: 1px solid #c8c8c8;
+    color: #777;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+.login_content h1 {
+    font: normal 25px Helvetica, Arial, sans-serif;
+    letter-spacing: -0.05em;
+    line-height: 20px;
+    margin: 10px 0 30px;
+
